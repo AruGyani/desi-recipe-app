@@ -11,7 +11,7 @@ import {
 import '../styles/NavigationBar.css'
 
 function NavigationBar(props) {
-    const [isOpen, setIsOpen] = useState(true);
+    const [isOpen, setIsOpen] = useState(false);
 
     const toggle = () => setIsOpen(!isOpen);
 
@@ -22,10 +22,10 @@ function NavigationBar(props) {
             <NavbarToggler onClick={toggle} />
             <Collapse isOpen={isOpen} navbar>
                 <Nav className="ml-auto" navbar>
-                    <NavItem>
+                    <NavItem className="item">
                         <NavLink className="link" href="/about">About</NavLink>
                     </NavItem>
-                    <NavItem>
+                    <NavItem className="item">
                         <NavLink className="link" href="/login">Login</NavLink>
                     </NavItem>
                 </Nav>
