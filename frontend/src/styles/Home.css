@@ -1,0 +1,52 @@
+.jumbotron {
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.25),
+            rgba(0, 0, 0, 0.25)
+        ), url("../images/jumbotron_splash.jpg") no-repeat center center fixed;
+    
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+
+    height: 100vh;
+}
+
+.welcome {
+    color: white;
+
+    margin-bottom: 1em;
+}
+
+.startLink {
+    color: white;
+    font-weight: 700;
+
+    text-decoration: none !important;
+    display: inline-block;
+    position: relative;
+}
+
+.startLink:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.startLink:hover {
+    text-decoration: none !important;
+    color: white !important;
+}
+
+.startLink:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
