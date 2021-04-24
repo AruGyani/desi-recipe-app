@@ -1,6 +1,6 @@
 .login-header {
     margin-top: 10%;
     margin-bottom: 4%;
-
-    font-weight: 700;
+    
+    font-weight: 700 !important;
 }

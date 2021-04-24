@@ -22,14 +22,11 @@ function NavigationBar(props) {
             <NavbarToggler onClick={toggle} />
             <Collapse isOpen={isOpen} navbar>
                 <Nav className="ml-auto" navbar>
-                    {/* <NavItem className="item">
-                        <NavLink className="link" href="/about">About</NavLink>
+                    <NavItem className="item">
+                        <NavLink className="link" href="/about">about</NavLink>
                     </NavItem>
                     <NavItem className="item">
-                        <NavLink className="link" href="/login">Login</NavLink>
-                    </NavItem> */}
-                    <NavItem className="item">
-                        <NavLink className="link" href="/calories">Calories</NavLink>
+                        <NavLink className="link" href="/login">login</NavLink>
                     </NavItem>
                 </Nav>
             </Collapse>
