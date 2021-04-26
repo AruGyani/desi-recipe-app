@@ -14,7 +14,6 @@ import Dashboard from './views/Dashboard'
 import { Route } from 'react-router-dom'
 
 function App() {  
-  // eslint-disable-next-line
   const {token, setToken} = useToken();
 
   return (

@@ -27,7 +27,7 @@ function NavigationBar(props) {
                             <NavLink className="link" href="/about">about</NavLink>
                         </NavItem>
                         <NavItem className="item">
-                            <NavLink className="link" href="/login">login</NavLink>
+                            <NavLink className="link" href="/dashboard">login</NavLink>
                         </NavItem>
                     </Nav>
                 </Collapse>
@@ -46,11 +46,11 @@ function NavigationBar(props) {
                             <NavLink className="link" href="/about">about</NavLink>
                         </NavItem>
                         <NavItem className="item">
-                            <NavLink className="link" href="/login">login</NavLink>
+                            <NavLink className="link" href="/dashboard">dashboard</NavLink>
                         </NavItem>
                         <NavItem className="item">
                             <NavLink className="link" href="/" onClick={() => {
-                                sessionStorage.removeItem("token");
+                                sessionStorage.clear();
                             }}><strong>logout</strong></NavLink>
                         </NavItem>
                     </Nav>

@@ -20,8 +20,8 @@ mongodb.MongoClient.connect(uri, {useUnifiedTopology: true}, (err, client) => {
     let db = client.db('myFirstDatabase');
     const collection = db.collection("users");
 
-    app.get("/:user", (req, res) => {
-        collection.find({ user: req.params.user }).toArray((err, docs) => {
+    app.post("/api/login/get", (req, res) => {
+        collection.find({ user: req.body.user }).toArray((err, docs) => {
             if (err) {
                 res.send("Error in GET request");
             } else {
@@ -29,19 +29,19 @@ mongodb.MongoClient.connect(uri, {useUnifiedTopology: true}, (err, client) => {
                     let hashedPassword = docs[0].pass;
                     const salt = docs[0].salt;
 
-                    if (!req.query.pass) {
-                        res.send("Please enter a password associated with the GET request URL parameters");
+                    if (!req.body.pass) {
+                        res.send({error: "No password entered."});
                     } else {
-                        const hashedQueryPassword = hash(`${salt}${req.query.pass}`);
-                        
+                        const hashedQueryPassword = hash(`${salt}${req.body.pass}`);
+
                         if (hashedPassword === hashedQueryPassword) {
                             res.send({...docs[0]});
                         } else {
-                            res.send("There was an error with either the username or passcode.");
+                            res.send({error: "There was an error with either the username or passcode."});
                         }
                     }
                 } else {
-                    res.send("No users with that name exist.");
+                    res.send({error: "There was an error with either the username or passcode."});
                 }
             }
         });
