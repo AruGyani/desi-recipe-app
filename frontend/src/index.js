@@ -8,11 +8,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter as Router} from 'react-router-dom'
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Router>
+  <Router>
       <App />
-    </Router>
-  </React.StrictMode>,
+  </Router>,
   document.getElementById('root')
 );
 

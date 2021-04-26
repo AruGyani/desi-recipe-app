@@ -15,24 +15,50 @@ function NavigationBar(props) {
 
     const toggle = () => setIsOpen(!isOpen);
 
-    return (
-        <div>
-            <Navbar color="light" light expand="md">
-            <NavbarBrand className="logo" href="/">desitrak</NavbarBrand>
-            <NavbarToggler onClick={toggle} />
-            <Collapse isOpen={isOpen} navbar>
-                <Nav className="ml-auto" navbar>
-                    <NavItem className="item">
-                        <NavLink className="link" href="/about">about</NavLink>
-                    </NavItem>
-                    <NavItem className="item">
-                        <NavLink className="link" href="/login">login</NavLink>
-                    </NavItem>
-                </Nav>
-            </Collapse>
-            </Navbar>
-        </div>
-    )
+    if (!props.token) {
+        return (
+            <div>
+                <Navbar color="light" light expand="md">
+                <NavbarBrand className="logo" href="/">desitrak</NavbarBrand>
+                <NavbarToggler onClick={toggle} />
+                <Collapse isOpen={isOpen} navbar>
+                    <Nav className="ml-auto" navbar>
+                        <NavItem className="item">
+                            <NavLink className="link" href="/about">about</NavLink>
+                        </NavItem>
+                        <NavItem className="item">
+                            <NavLink className="link" href="/login">login</NavLink>
+                        </NavItem>
+                    </Nav>
+                </Collapse>
+                </Navbar>
+            </div>
+        )
+    } else {
+        return (
+            <div>
+                <Navbar color="light" light expand="md">
+                <NavbarBrand className="logo" href="/">desitrak</NavbarBrand>
+                <NavbarToggler onClick={toggle} />
+                <Collapse isOpen={isOpen} navbar>
+                    <Nav className="ml-auto" navbar>
+                        <NavItem className="item">
+                            <NavLink className="link" href="/about">about</NavLink>
+                        </NavItem>
+                        <NavItem className="item">
+                            <NavLink className="link" href="/login">login</NavLink>
+                        </NavItem>
+                        <NavItem className="item">
+                            <NavLink className="link" href="/" onClick={() => {
+                                sessionStorage.removeItem("token");
+                            }}><strong>logout</strong></NavLink>
+                        </NavItem>
+                    </Nav>
+                </Collapse>
+                </Navbar>
+            </div>
+        )
+    }   
 }
 
 export default NavigationBar;

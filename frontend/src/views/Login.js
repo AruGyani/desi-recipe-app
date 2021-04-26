@@ -5,7 +5,7 @@ import LoginForm from '../components/LoginForm'
 function Login(props) {
     return (
         <div>
-            <LoginForm/>
+            <LoginForm setToken={props.setToken}/>
         </div>
     )
 }
